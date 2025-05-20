@@ -1,0 +1,8 @@
+builtin_interfaces/Time stamp
+
+float32 fuel_pressure
+float32 engine_coolant_temperature
+float32 transmission_oil_pressure
+float32 transmission_oil_temperature
+float32 engine_oil_temperature
+float32 engine_oil_pressure

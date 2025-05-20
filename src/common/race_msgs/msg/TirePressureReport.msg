@@ -1,0 +1,4 @@
+builtin_interfaces/Time stamp
+
+float32 tire_pressure
+float32 tire_pressure_gauge

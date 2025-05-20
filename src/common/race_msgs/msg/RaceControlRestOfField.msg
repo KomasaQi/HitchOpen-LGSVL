@@ -1,0 +1,8 @@
+builtin_interfaces/Time stamp
+
+uint8 comp_veh_num
+uint8 comp_veh_flag
+uint8 comp_rank
+uint8 comp_laps_count
+float64 comp_lap_distance
+float64 comp_speed

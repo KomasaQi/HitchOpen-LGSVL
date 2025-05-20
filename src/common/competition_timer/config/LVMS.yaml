@@ -1,0 +1,21 @@
+# Define map origin
+origin:
+  X: 36.2720726855411
+  Y: -115.01081305539
+  Z: 594.959390774912
+# Define finish line as two points (start and end of the line)
+finish_line:
+  point1:
+    latitude:  36.273701 # Example coordinates - replace with actual values
+    longitude: -115.013458
+    X: -237.66
+    Y: 180.74
+  point2:
+    latitude: 36.273667
+    longitude: -115.013637
+    X: -253.76
+    Y: 176.98
+  # Tolerance in meters for crossing detection
+  crossing_tolerance: 2.0
+  # Minimum time between crossings (to prevent multiple detections)
+  min_crossing_interval: 10.0  # seconds 

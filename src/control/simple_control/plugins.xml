@@ -1,0 +1,8 @@
+<library path="simple_control">
+  <class type="control::longitudinal::PIDLonController" base_class_type="control::ControllerInterface">
+      <description>A PID controller for longitudinal control</description>
+  </class>
+  <class type="control::lateral::PurePursuitController" base_class_type="control::ControllerInterface">
+      <description>A pure pursuit controller for lateral control</description>
+  </class>
+</library>

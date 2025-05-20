@@ -1,0 +1,6 @@
+builtin_interfaces/Time stamp
+
+float32 ride_height_fl
+float32 ride_height_fr
+float32 ride_height_rl
+float32 ride_height_rr

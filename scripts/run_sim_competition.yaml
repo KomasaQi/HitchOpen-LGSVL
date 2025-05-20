@@ -1,0 +1,26 @@
+session_name: Launch LGSVL Competition
+windows:
+  - window_name: LGSVL Competition
+    layout: tiled
+    panes:
+    - shell_command:
+      - source install/setup.bash
+      - sleep 1
+      - python3 src/launch/svl_launch/scripts/launch_ossdc.py --env svl.env
+    - shell_command:
+      - source install/setup.bash
+      - ros2 launch competition_timer competition_timer.launch.py use_sim_time:=true
+    # luanch urdf if needed
+    # - shell_command:
+    #   - source install/setup.bash
+    #   - sleep 10
+    #   - ros2 launch autonomy_launch misc.launch.py
+    
+    # launch your stack here
+    - shell_command:
+      - source install/setup.bash
+      - ros2 launch simple_racing simple_racing.launch.py params_file:=src/launch/simple_racing/params/simple_racing.yml use_sim_time:=true
+    - shell_command:
+      - source install/setup.bash
+      - mkdir -p ./competition_results/ && cd ./competition_results/
+      - ros2 bag record -a 

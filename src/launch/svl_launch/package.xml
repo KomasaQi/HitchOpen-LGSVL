@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>svl_launch</name>
+  <version>1.0.0</version>
+  <description>SVL package of the ART Stack</description>
+  <maintainer email="haorux@andrew.cmu.edu">Haoru Xue</maintainer>
+  <maintainer email="sisahawork@gmail.com">Siddharth Saha</maintainer>
+  <license>LGPLv3</license>
+  <author email="haorux@andrew.cmu.edu">Haoru Xue</author>
+  <author email="sisahawork@gmail.com">Siddharth Saha</author>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+  
+  <exec_depend>lgsvl_interface</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

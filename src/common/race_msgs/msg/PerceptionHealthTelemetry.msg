@@ -1,0 +1,16 @@
+builtin_interfaces/Time stamp
+
+float64 cam_right_freq
+float64 cam_left_freq
+float64 cam_front_freq
+float64 cam_front_left_freq
+float64 cam_front_right_freq
+float64 cam_rear_freq
+
+float64 lidar_right_freq
+float64 lidar_front_freq
+float64 lidar_left_freq
+float64 lidar_rear_freq
+
+float64 radar_rear_freq
+float64 radar_front_freq

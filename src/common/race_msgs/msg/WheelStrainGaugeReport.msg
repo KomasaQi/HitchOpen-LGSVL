@@ -1,0 +1,6 @@
+builtin_interfaces/Time stamp
+
+float32 fl_wheel_load
+float32 fr_wheel_load
+float32 rl_wheel_load
+float32 rr_wheel_load

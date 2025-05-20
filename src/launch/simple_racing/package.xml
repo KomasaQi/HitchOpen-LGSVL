@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>simple_racing</name>
+  <version>0.0.0</version>
+  <description>Simple Racing that starts race car with waypoint following</description>
+  <maintainer email="wuxiaohua1011@gmail.com">michael</maintainer>
+  <license>TODO: License declaration</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <exec_depend>svl_launch</exec_depend>
+  <exec_depend>global_planning</exec_depend>
+  <exec_depend>simple_control</exec_depend>
+  <exec_depend>autoware_lgsvl_interface</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

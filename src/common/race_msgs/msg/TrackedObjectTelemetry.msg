@@ -1,0 +1,12 @@
+int32 id
+float64 confidence
+float64 lat_pos
+float64 long_pos
+float64 long_vel
+float64 range
+bool ekf_updated
+float64 hallucination_time
+float64 ekf_updated_time
+float64 time_confidence
+float64 range_confidence
+float64 cov_confidence

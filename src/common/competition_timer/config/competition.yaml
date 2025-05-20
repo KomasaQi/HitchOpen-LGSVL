@@ -1,0 +1,3 @@
+results_dir: ./competition_results
+target_laps: 10
+vehicle_flag: "red"

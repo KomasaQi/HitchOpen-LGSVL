@@ -1,0 +1,7 @@
+builtin_interfaces/Time stamp
+
+float32 battery_voltage
+uint8 safety_switch_state
+bool mode_switch_state
+uint8 sys_state
+uint8 rolling_counter

@@ -1,0 +1,5 @@
+/**:
+  ros__parameters:
+    control_frame: "base_link"
+    gps_frame: "base_link"
+    

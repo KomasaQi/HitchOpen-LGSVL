@@ -1,0 +1,5 @@
+builtin_interfaces/Time stamp
+
+float32 steering_motor_ang_1
+float32 steering_motor_ang_2
+float32 steering_motor_ang_3

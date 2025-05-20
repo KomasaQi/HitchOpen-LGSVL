@@ -1,0 +1,25 @@
+/**:
+  ros__parameters:
+    # Controller manager settings
+    manager:
+      debug: true
+      control_pub_rate: 50  # Hz
+      plugins:
+        - control::longitudinal::PIDLonController
+        - control::lateral::PurePursuitController
+
+    # Longitudinal control parameters (PID)
+    longitudinal:
+      pid:
+        kp: 0.5
+        ki: 0.1
+        kd: 0.1
+        min_throttle: 0.0
+        max_throttle: 100.0
+        max_velocity: 10.0  # m/s
+
+    # Lateral control parameters (Pure Pursuit)
+    lateral:
+      pure_pursuit:
+        look_ahead_distance: 4.0  # meters
+        wheel_base: 2.7  # meters

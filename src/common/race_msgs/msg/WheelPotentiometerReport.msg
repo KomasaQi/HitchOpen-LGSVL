@@ -1,0 +1,6 @@
+builtin_interfaces/Time stamp
+
+float32 fl_damper_linear_potentiometer
+float32 fr_damper_linear_potentiometer
+float32 rl_damper_linear_potentiometer
+float32 rr_damper_linear_potentiometer

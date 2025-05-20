@@ -1,0 +1,7 @@
+/**:
+  ros__parameters:
+    debug: true                        # Enable/disable debug logging
+    global_path_publish_rate: 1         # Rate at which global path is published (Hz)
+    local_path_publish_rate: 10         # Rate at which local path is published (Hz)
+    local_path_length_m: 50.0           # Length of local path in meters
+    planning_odom_publish_rate: 10      # Rate at which planning odom is published (Hz)

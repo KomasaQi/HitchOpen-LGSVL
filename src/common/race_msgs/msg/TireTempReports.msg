@@ -1,0 +1,6 @@
+builtin_interfaces/Time stamp
+
+TireTempReport tire_temp_rpt_01
+TireTempReport tire_temp_rpt_02
+TireTempReport tire_temp_rpt_03
+TireTempReport tire_temp_rpt_04

@@ -1,0 +1,42 @@
+builtin_interfaces/Time stamp
+
+float64 x
+float64 calculated_x
+float64 y
+float64 calculated_y
+float64 speed
+uint8 ttl_index
+bool is_pose_accurate
+
+float64 target_speed
+StopType stop_type
+StrategyType strategy_type
+
+bool is_ttc_missing
+bool is_pose_missing
+bool is_objects_missing
+
+float64 current_s
+float64 current_d
+float64 current_s_speed
+float64 current_d_speed
+float64 current_s_acc
+float64 current_d_acc
+
+float64 desired_s
+float64 desired_d
+float64 desired_speed
+float64 desired_s_speed
+float64 desired_d_speed
+float64 desired_s_acc
+float64 desired_d_acc
+
+uint64 n_paths_generated
+uint64 n_paths_non_existent
+uint64 n_paths_constraint_violated
+uint64 n_paths_collision
+uint64 n_paths_passed
+bool optimal_path_exists
+bool any_acc_violated
+bool any_speed_violated
+bool any_curv_violated

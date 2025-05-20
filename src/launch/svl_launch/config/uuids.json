@@ -1,0 +1,22 @@
+{
+    "MAPS": {
+        "IMS": {
+            "TIME_ZONE_OFFSET": -4,
+            "UUID": "IMS-01",
+            "BASE_START_POSE": [
+                -3.0,
+                0.0,
+                0.0,
+                0.0,
+                -270,
+                0.0
+            ]
+        }
+    },
+    "SENSORS": {
+        "GPS": "vehicle-gps",
+        "GPS_LIDAR": "vehicle-gps-lidar",
+        "GPS_LIDAR_CAMERAS": "vehicle-gps-lidar-cameras",
+        "GPS_LIDAR_CAMERAS_FULL": "vehicle-gps-lidar-cameras-full"
+    }
+}

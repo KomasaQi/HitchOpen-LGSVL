@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>race_metadata</name>
+  <version>1.0.0</version>
+  <description>ROS2 package containing ART metadata for vehicles</description>
+  <maintainer email="sisahawork@gmail.com">Siddharth Saha</maintainer>
+  <license>LGPLv3</license>
+  <author email="sisahawork@gmail.com">Siddharth Saha</author>
+
+  <buildtool_depend>ament_cmake_auto</buildtool_depend>
+  
+  <depend>joint_state_publisher</depend>
+  <depend>xacro</depend>
+  <depend>joint_state_broadcaster</depend>
+  <depend>joint_state_publisher_gui</depend>
+
+  <exec_depend>rosbag2_storage_mcap</exec_depend>
+  <exec_depend>rmw_cyclonedds_cpp</exec_depend>
+  <exec_depend>rviz_imu_plugin</exec_depend>
+  <exec_depend>zenoh_bridge_dds</exec_depend>
+  <exec_depend>foxglove_bridge</exec_depend>
+  <!-- <exec_depend>camera_calibration</exec_depend>
+  <exec_depend>pt_selection_pkg</exec_depend>   for Lidar-camera-calibration -->
+
+  <test_depend>ament_lint_auto</test_depend>
+  <test_depend>ament_lint_common</test_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>

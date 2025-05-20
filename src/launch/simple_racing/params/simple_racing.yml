@@ -1,0 +1,85 @@
+/controller_manager:
+  ros__parameters:
+    # Controller manager settings
+    manager:
+      debug: false
+      control_pub_rate: 50  # Hz
+      flag_timeout: 1.0 # Timeout in seconds
+      log_info: false # decide if log info as .csv
+      csv_file_path: src/launch/simple_racing/log/trail_full_round.csv
+      plugins:
+        - control::longitudinal::PIDLonController
+        - control::lateral::PurePursuitController
+ 
+
+    # Longitudinal control parameters (PID)
+    longitudinal:
+      pid:
+        kp: 2.0
+        ki: 0.01
+        kd: 0.1
+        min_throttle: -100.0
+        max_throttle: 100.0
+        max_velocity: 90.0  # m/s
+      wheel:
+        front_coeff: 3.3326 # speed m/s = wheel_speed / coeff
+        rear_coeff: 3.2370  # speed m/s = wheel_speed / coeff
+      tcs:
+        slip_ratio_max: 0.05 # maximum slip ratio when braking for ABS
+        slip_ratio_min: -0.15 # minimum slip ratio when accelerating for TCS
+        tcs_power_ratio: 0.01 # reserving ratio of power in TCS
+        abs_brake_ratio: 0.01 # reserving braking of braking in ABS
+        k_smc: 10.0
+        lambda_smc: 6.0
+        eta_smc: 0.5
+        abs_interval: 6 # interval for abs to return state
+        pred_step: 4 # predictive_horizon
+
+      gear:
+        launch: true
+        max_gear: 6
+        neutral_gear: 0
+        shift_rpm_0_to_1: 5000.0
+        shift_spd_1_to_2: 20.0
+        shift_spd_2_to_3: 35.0
+        shift_spd_3_to_4: 50.0
+        shift_spd_4_to_5: 62.0
+        shift_spd_5_to_6: 72.0
+        upshift_threshold: 5300.0
+        downshift_threshold: 4800.0
+        
+
+    # Lateral control parameters (Pure Pursuit)
+    lateral:
+      pure_pursuit:
+        look_ahead_distance: 40.0  # meters
+        wheel_base: 2.987 # meters
+        max_steering_angle: 0.349066  # radians (~20 degrees)
+        smoothing_factor: 0.99  # smoothing factor (0.0-1.0)
+      mfasmc:
+        max_add_steering_angle: 0.00349 # radians ≈ 0.2 degrees
+        k_lat_err: 1.0 
+        k_th_err: -2.0
+
+        
+      pid_comp:
+        kp: 0.0005
+        ki: 0.00
+        kd: 0.01
+        int_sat: 0.000001
+
+/global_planning:
+  ros__parameters:
+    debug: false                        # Enable/disable debug logging
+    visualize: true                    # Enable/disable visualization
+    global_path_publish_rate: 1         # Rate at which global path is published (Hz)
+    local_path_publish_rate: 10         # Rate at which local path is published (Hz)
+    local_path_length_m: 250.0           # Length of local path in meters # this is the next waypoint
+    planning_odom_publish_rate: 10      # Rate at which planning odom is published (Hz)
+    csv_file_path: src/launch/simple_racing/params/output3.csv
+#    csv_file_path: ~/catkinws/HitchOpen-LGSVL/output1.csv
+
+/autoware_lgsvl_interface:
+  ros__parameters:
+    max_accel_mps2: 15.0
+    max_decel_mps2: -15.0

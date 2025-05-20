@@ -1,0 +1,7 @@
+builtin_interfaces/Time stamp
+
+# Data for debugging
+uint16 num_cycles_purple_flag
+uint16 num_emergency_stop
+uint16 num_cycles_missing_raptor_cmd
+uint16 num_cycles_raptor_error
