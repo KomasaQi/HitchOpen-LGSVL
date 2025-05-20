@@ -122,6 +122,13 @@ The control system is responsible for executing the planned trajectory by genera
 
 We maintain a private fork of SVL simulator which adds richer vehicle dynamics to the vehicle. Combined with accurate sensor configuration, SVL was the ultimate solution for integration testing. 
 
+#### Chassis
+   - Overall Length: 192in/4876mm
+   - Overall Width: 76in/1930mm
+   - Overall Height: 45.5in/1156.5mm
+   - Wheelbase: 117in/2972mm
+   - Curb Weight: 1680lbs/748.43kg
+
 #### Installation Steps
 1. Download the release from [here](https://intelligentracingcom-my.sharepoint.com/:u:/g/personal/tianlun_zhang_intelligentracing_com/EVBmsMrNlrVCob8QErwZ7jEBM3x6QQZZTEedvdhRlpJm-w?e=J1WU67) and unzip it.
 2. Download the `wise.zip` file from [here](https://intelligentracingcom-my.sharepoint.com/:u:/g/personal/tianlun_zhang_intelligentracing_com/ES8QdS9l-pBKgFhAtyaUQuQBil8Q7Qc9UqUZAgeWjPncOg?e=2RKUGa) and unzip it in the same folder as the simulator build
@@ -198,11 +205,7 @@ Please source all the terminals properly. Please make sure your ports are not ma
    float32 target_wheel_angular_rate  # radians / second
    uint8 target_gear
 
-   uint8 GEAR_NEUTRAL = 0
-   uint8 GEAR_DRIVE = 1
-   uint8 GEAR_REVERSE = 2
-   uint8 GEAR_PARKING = 3
-   uint8 GEAR_LOW = 4
+   # target_gear from 0-6, 0 is neutral, 1-6 is forward gear
    ```
 
 7. Alternatively, keynoard_controller is provided to explore the maps and collect waypoints. You can use `WASD` to maunally control the vehicle in the simulator (in ART Pilot Terminal):
@@ -215,3 +218,34 @@ Please source all the terminals properly. Please make sure your ports are not ma
    ros2 launch simple_racing simple_racing.launch.py params_file:=src/launch/simple_racing/params/simple_racing.yml
    ```
 
+#### Simulation Competition
+
+The simulation environment provides a comprehensive race competition system with integrated timing and flag control. This allows for realistic race scenario testing and evaluation.
+
+1. Competition timer (Please do not modify anything in competition_timer for your final submission)
+   - Keeps track of the laps number and clocks the time. 
+   - Configuration options:
+      - Map is set in `race.env`
+      - `results_dir`: Directory to save competition results
+      - `target_laps`: Number of laps to complete (default: 10)
+      - `vehicle_flag`: Initial flag state (default: 'red')
+   - You can start the competition timer by:
+      ```bash
+      ros2 launch competition_timer competition_timer.launch.py use_sim_time:=true
+      ```
+2. Flags
+   - The competition timer publishes VehicleFlag on the `/vehicle_flag` topic
+   - Flags in the competition:
+     - GREEN: Competition active, vehicle can go
+     - RED: Vehicle must stop
+     - BLACK: Competition ended
+   - The competition is started by manually setting the flag to green:
+      ```bash
+      ros2 param set /competition_timer_node vehicle_flag green
+      ```
+   - Vehicles MUST subscribe to `/vehicle_flag` topic and respond to flag states. If no flag is received, vehicle must assume RED flag.
+   - Black flag is published at the end of the competition. You do not need to response to it in the simulation now, but please try to make sure your vehicle can stop safely after finishing the competition.
+
+3. Competition States
+   - Start: Competition begins with GREEN flag. Timer starts.
+   - Pause: Red fla
